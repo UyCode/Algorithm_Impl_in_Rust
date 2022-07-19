@@ -3,7 +3,6 @@ pub mod sorting;
 #[cfg(test)]
 mod tests {
     use sorting;
-    //use crate::sorting::selection_sort::selection_sort;
     use super::*;
     extern crate rand;
     use self::rand::Rng;
@@ -50,6 +49,35 @@ mod tests {
         sorting::bubble_sort(&mut res);
         for i in 0..res.len() - 1 {
             assert!(res[i] <= res[i + 1]);
+        }
+    }
+
+    /**
+     * Quick sort is a divide and conquer algorithm.
+     * It works by recursively splitting the array in two parts,
+     * and sorting each part.
+     * Time Complexity: O(n log n)
+     * Space Complexity: O(log n)
+     * Stable: Yes
+     * In-place: Yes
+     * Online: Yes
+     */
+
+    #[test]
+    fn quick_sort() {
+        let mut res = vec![];
+        let mut rng = rand::thread_rng();
+        for _i in 0..10000 {
+            res.push(rng.gen_range(0..10000));
+        }
+
+        let len = res.len();
+        let mut result = vec![0; len];
+        for i in 0..res.len() {
+            result[i] = sorting::quick_sort(&mut res, 0, len - 1, i);
+        }
+        for i in 0..res.len() - 1 {
+            print!("{} ", result[i]);
         }
     }
 }
