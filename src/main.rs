@@ -84,10 +84,33 @@ mod tests {
             if i % 1000 == 0 { println!(); }
         }
     }
+
+    /**
+     * merge sort is a recursive algorithm for sorting.
+     * It works by recursively splitting the array in two parts,
+     * and sorting each part.
+     * Time Complexity: O(n log n)
+     * Space Complexity: O(log n)
+     * Stable: Yes
+     * In-place: Yes
+     * Online: Yes
+     */
+    #[test]
+    fn merge_sort() {
+        let mut res = vec![];
+        let mut rng = rand::thread_rng();
+        for _i in 0..10000 {
+            res.push(rng.gen_range(0..10000));
+        }
+
+        sorting::merge_sort(&mut res);
+        for _i in 0..res.len() - 1 {
+            print!("{} ", res[_i]);
+            if _i % 100 == 0 { println!(); }
+        }
+    }
 }
 
 fn main() {
-    let a = "Hello, world!".to_string();
-    println!("{}", a);
-    println!("Hello, world!");
+    println!("Starting test....");
 }
