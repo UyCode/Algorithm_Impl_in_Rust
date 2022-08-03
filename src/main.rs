@@ -3,9 +3,12 @@ pub mod sorting;
 #[cfg(test)]
 mod tests {
     use sorting;
+
     use super::*;
-    extern crate rand;
+
     use self::rand::Rng;
+
+    extern crate rand;
 
     /**
      * selection sort is a sorting algorithm that works by iterating over the array,
@@ -78,6 +81,7 @@ mod tests {
         }
         for i in 0..res.len() - 1 {
             print!("{} ", result[i]);
+            if i % 1000 == 0 { println!(); }
         }
     }
 }
