@@ -109,6 +109,25 @@ mod tests {
             if _i % 100 == 0 { println!(); }
         }
     }
+
+    /**
+     *
+     *
+     */
+    #[test]
+    fn heap_sort() {
+        let mut res = vec![];
+        let mut rng = rand::thread_rng();
+        for _i in 0..10000 {
+            res.push(rng.gen_range(0..10000));
+        }
+        sorting::heap_sort(&mut res);
+        println!("last one : {} ", res[res.len() - 1]);
+        for i in (0..=res.len() - 1).rev() {
+            print!("{} ", res[i]);
+            if i % 100 == 0 { println!(); }
+        }
+    }
 }
 
 fn main() {
