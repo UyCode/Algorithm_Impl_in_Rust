@@ -111,8 +111,14 @@ mod tests {
     }
 
     /**
-     *
-     *
+     * Heap sort is a recursive algorithm for sorting.
+     * It works by recursively splitting the array in two parts,
+     * and sorting each part.
+     * Time Complexity: O(n log n)
+     * Space Complexity: O(log n)
+     * Stable: Yes
+     * In-place: Yes
+     * Online: Yes
      */
     #[test]
     fn heap_sort() {
