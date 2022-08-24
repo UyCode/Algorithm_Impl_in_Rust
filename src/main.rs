@@ -134,6 +134,27 @@ mod tests {
             if i % 100 == 0 { println!(); }
         }
     }
+
+    /**
+     * Insertion sort is a simple sorting algorithm that works by repeatedly swapping adjacent elements if they are in wrong order.
+     * Time Complexity: O(n^2)
+     * Space Complexity: O(1)
+     * Stable: Yes
+     * In-place: Yes
+     * Online: Yes
+     */
+    #[test]
+    fn insertion_sort() {
+        let mut res = vec![];
+        let mut rng = rand::thread_rng();
+        for _i in 0..10000 {
+            res.push(rng.gen_range(0..10000));
+        }
+        sorting::insertion_sort(&mut res);
+        for i in 0..res.len() - 1 {
+            print!("{},  ", res[i]);
+        }
+    }
 }
 
 fn main() {
